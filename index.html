@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="styles.css" />
+    <script
+      src="https://kit.fontawesome.com/e42e1774e6.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=PT+Sans&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nixie+One&display=swap"
+      rel="stylesheet"
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sachin Patel</title>
+  </head>
+  <body>
+    <main>
+      <svg
+        class="heart-loader"
+        xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+        xmlns:svg="http://www.w3.org/2000/svg"
+        xmlns="http://www.w3.org/2000/svg"
+        xmlns:xlink="http://www.w3.org/1999/xlink"
+        viewBox="0 0 90 90"
+        version="1.1"
+      >
+        <g class="heart-loader__group">
+          <path
+            class="heart-loader__square"
+            stroke-width="1"
+            fill="none"
+            d="M0,30 0,90 60,90 60,30z"
+          />
+          <path
+            class="heart-loader__circle m--left"
+            stroke-width="1"
+            fill="none"
+            d="M60,60 a30,30 0 0,1 -60,0 a30,30 0 0,1 60,0"
+          />
+          <path
+            class="heart-loader__circle m--right"
+            stroke-width="1"
+            fill="none"
+            d="M60,60 a30,30 0 0,1 -60,0 a30,30 0 0,1 60,0"
+          />
+          <path
+            class="heart-loader__heartPath"
+            stroke-width="2"
+            d="M60,30 a30,30 0 0,1 0,60 L0,90 0,30 a30,30 0 0,1 60,0"
+          />
+        </g>
+      </svg>
+
+      <div class="top">
+        <div class="logo">
+          <p class="first">SACHIN</p>
+          <p class="last">PATEL</p>
+        </div>
+        <nav class="navbox">
+          <a href="#projects-page">Projects</a>
+          <a href="#skills-page">Skills</a>  
+          <a href="#">Contact</a>
+        </nav>
+      </div>
+
+      <div class="front-page">
+        <p class="title">Hi, I'm <span class="red">Sach!</span></p>
+        <p class="description">A Junior Web Developer Based in Brighton</p>
+        <div class="box">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </div>
+
+      <div class="projects-page" id="projects-page">
+        <h2>Projects</h2>
+        <div class="project one">
+          <img src="./images/dog1.jpg" alt="doggo" />
+          <div class="base">
+            <span class="fas fa-link" id="link"></span>
+            <span class="fab fa-github" id="github"></span>
+          </div>
+        </div>
+        <div class="project two">
+          <img src="./images/dog2.jpg" alt="doggo" />
+          <div class="base">
+            <span class="fas fa-link" id="link"></span>
+            <span class="fab fa-github" id="github"></span>
+          </div>
+        </div>
+        <div class="project three">
+          <img src="./images/dog3.jpg" alt="doggo" />
+          <div class="base">
+            <span class="fas fa-link" id="link"></span>
+            <span class="fab fa-github" id="github"></span>
+          </div>
+        </div>
+      </div>
+
+      <div class="skills-page" id="skills-page">
+        <h2>Skills</h2>
+        <div class="icons" id="skills">
+          <span class="fab fa-html5"></span>
+          <span class="fab fa-css3-alt"></span>
+          <span class="fab fa-js-square"></span>
+        </div>
+        <div class="icons">
+          <span class="fab fa-react"></span>
+          <span class="fab fa-bootstrap"></span>
+          <span class="fab fa-github-square"></span>
+        </div>
+        <div class="icons">
+          <span class="fab fa-sass"></span>
+          <span class="fab fa-yarn"></span>
+          <span class="fab fa-node"></span>
+        </div>
+      </div>
+    </main>
+
+    <script src="./main.js"></script>
+  </body>
+</html>

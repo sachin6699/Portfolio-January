@@ -1,0 +1,483 @@
+$font-family: "PT Sans", sans-serif;
+$first-font: "Dancing Script", cursive;
+$second-font: "Nixie One", cursive;
+$primary-color: rgb(251, 6, 6);
+$secondary-color: #303841;
+$strokeColor: #dd1717; // #b8b8b8;
+$heartColor: #000000; //#e21737;
+$size: 150px;
+$totalAnim: 7s;
+$delay: 1s;
+$squareLen: 240;
+$circleLen: 188.522;
+$heartLen: 308.522;
+$svgSize: 90px;
+$circleW: 60px;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+body {
+  width: 100vw;
+  background-color: #eeeeee;
+
+  main {
+    height: 100vh;
+    width: 100vw;
+    // border-bottom: 2px solid $secondary-color;
+
+    .heart-loader {
+      position: absolute;
+      display: block;
+      left: 50%;
+      top: 30%;
+      margin-top: $size/-2;
+      width: $size;
+      height: $size;
+      overflow: visible;
+
+      &__group {
+        transform-origin: 0 $svgSize;
+        animation: group-anim $totalAnim $delay infinite;
+      }
+
+      &__square {
+        stroke: $strokeColor;
+        stroke-dasharray: $squareLen, $squareLen;
+        stroke-dashoffset: $squareLen;
+        animation: square-anim $totalAnim $delay infinite;
+      }
+
+      &__circle {
+        stroke: $strokeColor;
+        stroke-dasharray: $circleLen, $circleLen;
+        stroke-dashoffset: $circleLen;
+        transform-origin: $circleW $circleW/2;
+
+        &.m--left {
+          animation: left-circle-anim $totalAnim $delay infinite;
+        }
+
+        &.m--right {
+          animation: right-circle-anim $totalAnim $delay infinite;
+        }
+      }
+
+      &__heartPath {
+        stroke: $heartColor;
+        fill: transparent;
+        stroke-dasharray: $heartLen, $heartLen;
+        stroke-dashoffset: $heartLen;
+        animation: heart-anim $totalAnim $delay infinite;
+      }
+    }
+    @keyframes square-anim {
+      12% {
+        stroke-dashoffset: 0;
+      }
+      43% {
+        stroke-dashoffset: 0;
+        opacity: 1;
+      }
+      85% {
+        stroke-dashoffset: 0;
+        opacity: 0;
+      }
+      100% {
+        stroke-dashoffset: 0;
+        opacity: 0;
+      }
+    }
+    @keyframes left-circle-anim {
+      12% {
+        stroke-dashoffset: $circleLen;
+      }
+      31% {
+        stroke-dashoffset: 0;
+        transform: translateY(0);
+      }
+      41% {
+        stroke-dashoffset: 0;
+        transform: translateY($circleW/-2);
+      }
+      43% {
+        stroke-dashoffset: 0;
+        transform: translateY($circleW/-2);
+        opacity: 1;
+      }
+      85% {
+        stroke-dashoffset: 0;
+        transform: translateY($circleW/-2);
+        opacity: 0;
+      }
+      100% {
+        stroke-dashoffset: 0;
+        transform: translateY($circleW/-2);
+        opacity: 0;
+      }
+    }
+    @keyframes right-circle-anim {
+      12% {
+        stroke-dashoffset: $circleLen;
+      }
+      31% {
+        stroke-dashoffset: 0;
+        transform: translateX(0);
+      }
+      41% {
+        stroke-dashoffset: 0;
+        transform: translateX($circleW/2);
+      }
+      43% {
+        stroke-dashoffset: 0;
+        transform: translateX($circleW/2);
+        opacity: 1;
+      }
+      85% {
+        stroke-dashoffset: 0;
+        transform: translateX($circleW/2);
+        opacity: 0;
+      }
+      100% {
+        stroke-dashoffset: 0;
+        transform: translateX($circleW/2);
+        opacity: 0;
+      }
+    }
+    @keyframes group-anim {
+      43% {
+        transform: rotate(0);
+      }
+      54% {
+        transform: rotate(-45deg);
+      }
+      90% {
+        transform: rotate(-45deg);
+        opacity: 1;
+      }
+      97% {
+        transform: rotate(-45deg);
+        opacity: 0;
+      }
+      100% {
+        transform: rotate(-45deg);
+        opacity: 0;
+      }
+    }
+    @keyframes heart-anim {
+      55% {
+        stroke-dashoffset: $heartLen;
+        fill: transparent;
+      }
+      70% {
+        stroke-dashoffset: 0;
+        fill: transparent;
+      }
+      87% {
+        stroke-dashoffset: 0;
+        fill: $heartColor;
+      }
+      100% {
+        stroke-dashoffset: 0;
+        fill: $heartColor;
+      }
+    }
+
+    .other {
+      position: absolute;
+      left: 0;
+      bottom: 0.5rem;
+      width: 100%;
+      text-align: right;
+
+      &__link {
+        font-size: 1.3rem;
+        margin: 0 1rem;
+      }
+    }
+
+    .top {
+      width: 100%;
+      height: 13vh;
+      border-bottom: 3px solid #303841;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: #eeeeee;
+      z-index: 100;
+      position: fixed;
+      top: 0;
+
+      .logo {
+        width: 25%;
+        height: 50%;
+        // border: 2px solid black;
+        text-align: center;
+
+        .first {
+          font-family: $first-font;
+          color: $primary-color;
+          font-size: 1.4rem;
+          opacity: 1;
+        }
+        .last {
+          font-family: $second-font;
+          color: rgb(251, 6, 6);
+          font-size: 0.8rem;
+          letter-spacing: 5px;
+          opacity: 1;
+        }
+      }
+
+      .navbox {
+        width: 70%;
+        height: 30%;
+        opacity: 1;
+        // border: 2px solid black;
+        a {
+          margin: 5%;
+          text-decoration: none;
+          font-family: $second-font;
+          color: black;
+          font-weight: bold;
+        }
+      }
+    }
+
+    .front-page {
+      width: 75%;
+      height: 70vh;
+      border-right: 2.5px solid $secondary-color;
+      border-left: 2.5px solid $primary-color;
+      // display: block;
+      margin: auto;
+      margin-top: 20vh;
+      font-family: $second-font;
+      font-weight: bold;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 10%;
+      border-radius: 5px;
+      overflow: hidden;
+
+      .title {
+        animation: type 2s steps(13), blink-caret 0.75s step-end infinite;
+        overflow: hidden;
+        white-space: nowrap;
+        border-right: 2px solid black;
+        // width: 9.5ch;
+        // text-align: end;
+        font-size: 2rem;
+        text-align: center;
+
+        .red {
+          color: red;
+        }
+      }
+      @keyframes type {
+        from {
+          width: 0ch;
+        }
+        to {
+          width: 9ch;
+        }
+      }
+      @keyframes blink-caret {
+        from,
+        to {
+          border-color: transparent;
+        }
+        50% {
+          border-color: red;
+        }
+      }
+      .description {
+        text-align: center;
+      }
+
+      .box {
+        position: absolute;
+        top: 85%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+
+        span {
+          display: block;
+          width: 20px;
+          height: 20px;
+          border-bottom: 1px solid black;
+          border-right: 1px solid black;
+          transform: rotate(45deg);
+          margin: -10px;
+          animation: animate 2s infinite;
+
+          &:nth-child(2) {
+            animation-delay: -0.2s;
+          }
+          &:nth-child(3) {
+            animation-delay: -0.4s;
+          }
+        }
+        @keyframes animate {
+          0% {
+            opacity: 0;
+            transform: rotate(45deg) translate(-20px, -20px);
+          }
+          50% {
+            opacity: 1;
+          }
+          100% {
+            opacity: 0;
+            transform: rotate(45deg) translate(20px, 20px);
+          }
+        }
+      }
+    }
+    .projects-page {
+      width: 100vw;
+      height: 100vh;
+      margin-top: 15vh;
+      padding-top: 11vh;
+      border-top: 2px solid black;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-direction: column;
+      gap: 30px;
+
+      h2 {
+        font-family: $second-font;
+        margin-top: 5%;
+        animation: hinge 3s ease-in-out;
+        font-weight: bold;
+        font-size: 2.1rem;
+        z-index: 3;
+      }
+
+      @keyframes rubberBand {
+        0% {
+          transform: scale(1);
+        }
+        30% {
+          transform: scaleX(1.25) scaleY(0.75);
+        }
+        40% {
+          transform: scaleX(0.75) scaleY(1.25);
+        }
+        60% {
+          transform: scaleX(1.15) scaleY(0.85);
+        }
+        100% {
+          transform: scale(1);
+        }
+      }
+      @keyframes hinge {
+        0% {
+          transform: rotate(0);
+          transform-origin: top left;
+          animation-timing-function: ease-in-out;
+        }
+        20%,
+        60% {
+          transform: rotate(80deg);
+          transform-origin: top left;
+          animation-timing-function: ease-in-out;
+        }
+        40% {
+          transform: rotate(60deg);
+          transform-origin: top left;
+          animation-timing-function: ease-in-out;
+        }
+        80% {
+          transform: rotate(60deg) translateY(0);
+          transform-origin: top left;
+          animation-timing-function: ease-in-out;
+        }
+        100% {
+          transform: translateY(700px);
+        }
+      }
+
+      .project {
+        width: 75%;
+        height: 40%;
+        // border: 1px solid black;
+        animation: rubberBand 3s ease-in-out;
+        background-color: whitesmoke;
+        box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
+          rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+        display: flex;
+        justify-content: center;
+        align-items: flex-end;
+        z-index: 1§;
+        position: relative;
+
+        img {
+          width: 75%;
+          height: 70%;
+          position: absolute;
+          top: 0;
+        }
+
+        .base {
+          width: 100%;
+          height: 30%;
+          border-top: 2px solid $secondary-color;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          gap: 10%;
+          font-size: 2rem;
+
+          #link {
+            color: black;
+
+            &:hover {
+              color: $primary-color;
+            }
+          }
+
+          #github {
+            color: black;
+
+            &:hover {
+              color: $primary-color;
+            }
+          }
+        }
+      }
+    }
+
+    .skills-page {
+      width: 100vw;
+      height: 100%;
+      padding-top: 15vh;
+      display: flex;
+      justify-content: center;
+      flex-direction: row;
+      flex-wrap: wrap;
+
+      h2 {
+        font-family: $second-font;
+        font-size: 2.1rem;
+        text-align: center;
+      }
+
+      .icons {
+        height: 20%;
+        width: 100%;
+        font-size: 6rem;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+      }
+    }
+  }
+}
