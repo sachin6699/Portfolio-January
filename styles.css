@@ -296,7 +296,7 @@ body main .top {
           align-items: center;
   background-color: rgba(185, 42, 42, 0.123);
   overflow: hidden;
-  z-index: 1;
+  z-index: 1000;
   position: fixed;
   margin: 5px 0;
   border-radius: 25px;
@@ -352,6 +352,7 @@ body main .top .navbox a {
   font-family: "Nixie One", cursive;
   color: black;
   font-weight: bold;
+  color: black;
 }
 
 body main .front-page {
@@ -452,8 +453,8 @@ body main .front-page .box span {
   display: block;
   width: 20px;
   height: 20px;
-  border-bottom: 1px solid black;
-  border-right: 1px solid black;
+  border-bottom: 1px solid whitesmoke;
+  border-right: 1px solid whitesmoke;
   -webkit-transform: rotate(45deg);
           transform: rotate(45deg);
   margin: -20px;
@@ -523,6 +524,7 @@ body main .projects-page {
       -ms-flex-direction: column;
           flex-direction: column;
   gap: 30px;
+  z-index: 1;
 }
 
 body main .projects-page h2 {
@@ -590,12 +592,28 @@ body main .projects-page .project-container .bottom-half .description {
   text-align: center;
   border-top: 1px solid black;
   font-family: "Nixie One", cursive;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+body main .projects-page .project-container .bottom-half .description .project-title {
+  font-size: 2rem;
+  font-family: "Dancing Script", cursive;
+  color: #fb0606;
 }
 
 body main .projects-page .project-container .bottom-half .description .what-skills {
   margin-top: 3%;
   font-size: 0.8rem;
-  font-style: italic;
 }
 
 body main .projects-page .project-container .bottom-half .icon-half {
@@ -610,7 +628,6 @@ body main .projects-page .project-container .bottom-half .icon-half {
       -ms-flex-align: center;
           align-items: center;
   gap: 15px;
-  border-top: 1px solid black;
   font-size: 2.2rem;
 }
 
@@ -633,7 +650,7 @@ body main .projects-page .project-container .bottom-half .icon-half #github:hove
 body main .skills-page {
   width: 100vw;
   height: 100vh;
-  padding-top: 15vh;
+  padding-top: 20vh;
 }
 
 body main .skills-page h2 {
@@ -655,12 +672,13 @@ body main .skills-page .skills-container {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  gap: 35px;
+  gap: 30px;
 }
 
 body main .skills-page .skills-container .left-side-info-container {
   width: 90%;
   height: 30vh;
+  margin-top: 30px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -679,7 +697,7 @@ body main .skills-page .skills-container .left-side-info-container {
 body main .skills-page .skills-container .left-side-info-container p {
   width: 90%;
   letter-spacing: 0.1rem;
-  text-align: center;
+  text-align: justify;
   font-family: "Nixie One", cursive;
 }
 

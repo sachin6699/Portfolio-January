@@ -21,7 +21,6 @@ $box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
 
 body {
   max-width: 100vw;
-  // max-width: 100%;
   background-color: #eeeeee;
 
   main {
@@ -167,7 +166,7 @@ body {
       align-items: center;
       background-color: $box-color;
       overflow: hidden;
-      z-index: 1;
+      z-index: 1000;
       position: fixed;
       margin: 5px 0;
       border-radius: 25px;
@@ -210,6 +209,7 @@ body {
           font-family: $second-font;
           color: black;
           font-weight: bold;
+          color: black;
         }
       }
     }
@@ -278,8 +278,8 @@ body {
           display: block;
           width: 20px;
           height: 20px;
-          border-bottom: 1px solid black;
-          border-right: 1px solid black;
+          border-bottom: 1px solid whitesmoke;
+          border-right: 1px solid whitesmoke;
           transform: rotate(45deg);
           margin: -20px;
           animation: animate 2s infinite;
@@ -317,6 +317,7 @@ body {
       align-items: center;
       flex-direction: column;
       gap: 30px;
+      z-index: 1;
 
       h2 {
         font-family: $second-font;
@@ -364,13 +365,20 @@ body {
             text-align: center;
             border-top: 1px solid black;
             font-family: $second-font;
-            //   text-shadow: 0px 15px 5px rgba(0, 0, 0, 0.1),
-            //     10px 20px 5px rgba(0, 0, 0, 0.05), -10px 20px 5px rgba(0, 0, 0, 0.05);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            margin-bottom: 10px;
+
+            .project-title {
+              font-size: 2rem;
+              font-family: $first-font;
+              color: $primary-color;
+            }
 
             .what-skills {
               margin-top: 3%;
               font-size: 0.8rem;
-              font-style: italic;
             }
           }
 
@@ -381,7 +389,7 @@ body {
             justify-content: space-around;
             align-items: center;
             gap: 15px;
-            border-top: 1px solid black;
+            // border-top: 1px solid black;
             font-size: 2.2rem;
 
             #link {
@@ -407,7 +415,7 @@ body {
     .skills-page {
       width: 100vw;
       height: 100vh;
-      padding-top: 15vh;
+      padding-top: 20vh;
 
       h2 {
         font-family: $second-font;
@@ -422,13 +430,13 @@ body {
         // justify-content:;
         align-items: center;
         flex-direction: column;
-        gap: 35px;
+        gap: 30px;
         // align-items: center;
 
         .left-side-info-container {
           width: 90%;
           height: 30vh;
-          // border: 2px solid black;
+          margin-top: 30px;
           display: flex;
           justify-content: center;
           align-items: center;
@@ -439,7 +447,7 @@ body {
           p {
             width: 90%;
             letter-spacing: 0.1rem;
-            text-align: center;
+            text-align: justify;
             font-family: $second-font;
           }
         }
