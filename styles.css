@@ -1,4 +1,3 @@
-@charset "UTF-8";
 * {
   margin: 0;
   padding: 0;
@@ -231,17 +230,6 @@ body main {
   }
 }
 
-body main html,
-body main body {
-  height: 100%;
-}
-
-body main body {
-  position: relative;
-  background: #99d2e4;
-  background: linear-gradient(135deg, #99d2e4 0%, #ffd4da 100%);
-}
-
 body main .loader {
   position: absolute;
   width: 50px;
@@ -281,7 +269,7 @@ body main .shadow {
   height: 10px;
   top: 50%;
   left: 50%;
-  margin-top: 50px;
+  margin-top: 30px;
   margin-left: -75px;
   border-radius: 50%;
   background-color: #95a5a6;
@@ -292,35 +280,6 @@ body main .shadow {
   -webkit-filter: blur(5px);
           filter: blur(5px);
   z-index: 1;
-}
-
-body main .logo {
-  position: absolute;
-  bottom: 20px;
-  left: 50%;
-  width: 42px;
-  height: 42px;
-  padding: 12px 5px;
-  margin-left: -21px;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-  background-color: white;
-  border-radius: 50%;
-  -webkit-transition: -webkit-transform 500ms cubic-bezier(0.68, -0.55, 0.265, 1.55);
-  transition: -webkit-transform 500ms cubic-bezier(0.68, -0.55, 0.265, 1.55);
-  transition: transform 500ms cubic-bezier(0.68, -0.55, 0.265, 1.55);
-  transition: transform 500ms cubic-bezier(0.68, -0.55, 0.265, 1.55), -webkit-transform 500ms cubic-bezier(0.68, -0.55, 0.265, 1.55);
-}
-
-body main .logo:hover {
-  -webkit-transform: scale(1.4);
-          transform: scale(1.4);
-}
-
-body main .logo img {
-  width: 100%;
-  height: auto;
-  margin: 0 auto;
 }
 
 body main .top {
@@ -337,13 +296,14 @@ body main .top {
       -ms-flex-align: center;
           align-items: center;
   background-color: #eeeeee;
+  overflow: hidden;
   z-index: 100;
   position: fixed;
   top: 0;
 }
 
 body main .top .heading {
-  width: 25%;
+  width: 20%;
   height: 50%;
   text-align: center;
 }
@@ -364,13 +324,24 @@ body main .top .heading .last {
 }
 
 body main .top .navbox {
-  width: 70%;
+  width: 50%;
   height: 30%;
+  overflow: hidden;
+  background-color: wheat;
   opacity: 1;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
 }
 
 body main .top .navbox a {
-  margin: 5%;
   text-decoration: none;
   font-family: "Nixie One", cursive;
   color: black;
@@ -524,17 +495,17 @@ body main .front-page .box span:nth-child(3) {
 }
 
 body main .projects-page {
-  width: 100vw;
-  height: 100vh;
+  max-width: 100vw;
+  min-height: 100vh;
   margin-top: 15vh;
-  padding-top: 11vh;
+  padding-top: 15vh;
   border-top: 2px solid black;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -555,36 +526,18 @@ body main .projects-page h2 {
   z-index: 3;
 }
 
-body main .projects-page .project {
-  width: 75%;
-  height: 40%;
-  background-color: whitesmoke;
-  -webkit-box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
-          box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: end;
-      -ms-flex-align: end;
-          align-items: flex-end;
-  z-index: 1§;
-  position: relative;
+body main .projects-page .project-container {
+  width: 85%;
+  height: 60vh;
+  -webkit-box-shadow: #26394d 0px 20px 30px -10px;
+          box-shadow: #26394d 0px 20px 30px -10px;
+  background-color: rgba(185, 42, 42, 0.123);
+  border-radius: 25px;
 }
 
-body main .projects-page .project img {
-  width: 75%;
-  height: 70%;
-  position: absolute;
-  top: 0;
-}
-
-body main .projects-page .project .base {
+body main .projects-page .project-container .top-half {
   width: 100%;
-  height: 30%;
-  border-top: 2px solid #303841;
+  height: 60%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -594,23 +547,77 @@ body main .projects-page .project .base {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  gap: 10%;
-  font-size: 2rem;
 }
 
-body main .projects-page .project .base #link {
+body main .projects-page .project-container .top-half img {
+  width: 90%;
+  height: 85%;
+  border-radius: 25px;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+          box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+}
+
+body main .projects-page .project-container .bottom-half {
+  width: 100%;
+  height: 40%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+body main .projects-page .project-container .bottom-half .description {
+  width: 70%;
+  height: 70%;
+  text-align: center;
+  border-top: 1px solid black;
+  font-family: "Nixie One", cursive;
+}
+
+body main .projects-page .project-container .bottom-half .description .what-skills {
+  margin-top: 3%;
+  font-size: 0.8rem;
+  font-style: italic;
+}
+
+body main .projects-page .project-container .bottom-half .icon-half {
+  width: 90%;
+  height: 30%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 15px;
+  border-top: 1px solid black;
+  font-size: 2.2rem;
+}
+
+body main .projects-page .project-container .bottom-half .icon-half #link {
   color: black;
 }
 
-body main .projects-page .project .base #link:hover {
+body main .projects-page .project-container .bottom-half .icon-half #link:hover {
   color: #fb0606;
 }
 
-body main .projects-page .project .base #github {
+body main .projects-page .project-container .bottom-half .icon-half #github {
   color: black;
 }
 
-body main .projects-page .project .base #github:hover {
+body main .projects-page .project-container .bottom-half .icon-half #github:hover {
   color: #fb0606;
 }
 
