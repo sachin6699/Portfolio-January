@@ -493,6 +493,10 @@ body {
         }
       }
     }
+    .contact-page {
+      width: 100vw;
+      height: 100vh;
+    }
   }
 }
 
@@ -517,6 +521,7 @@ body {
       .navbox {
         width: 70%;
         font-size: 1.1rem;
+        margin: 10px;
       }
       .front-page {
         margin-top: 15vh;
@@ -533,7 +538,6 @@ body {
         padding-top: 10vh;
         .project-container {
           height: 70vh;
-          // font-size: 1.8rem;
 
           .bottom-half {
             .description {

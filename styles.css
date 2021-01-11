@@ -773,6 +773,11 @@ body main .skills-page .skills-container .right-icons-container .right-icons {
   color: whitesmoke;
 }
 
+body main .contact-page {
+  width: 100vw;
+  height: 100vh;
+}
+
 @media screen and (min-width: 480px) {
   body main {
     height: 100vh;
@@ -790,6 +795,7 @@ body main .skills-page .skills-container .right-icons-container .right-icons {
   body main .navbox {
     width: 70%;
     font-size: 1.1rem;
+    margin: 10px;
   }
   body main .front-page {
     margin-top: 15vh;
