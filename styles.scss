@@ -469,6 +469,11 @@ body {
             align-items: center;
             font-size: 2.8rem;
             color: whitesmoke;
+            padding-top: 10px;
+
+            p {
+              font-size: 0.9rem;
+            }
           }
           .middle-icons {
             height: 90%;
@@ -479,6 +484,10 @@ body {
             align-items: center;
             font-size: 2.8rem;
             color: whitesmoke;
+            padding-top: 10px;
+            p {
+              font-size: 0.9rem;
+            }
           }
           .right-icons {
             height: 90%;
@@ -489,6 +498,10 @@ body {
             align-items: center;
             font-size: 2.8rem;
             color: whitesmoke;
+            padding-top: 10px;
+            p {
+              font-size: 0.9rem;
+            }
           }
         }
       }
@@ -496,6 +509,21 @@ body {
     .contact-page {
       width: 100vw;
       height: 100vh;
+      padding-top: 20vh;
+
+      .contact-container {
+        width: 100vw;
+        height: 80vh;
+        border: 5px solid black;
+        display: flex;
+        justify-content: center;
+
+        .circle-container {
+          width: 80%;
+          height: 60%;
+          border: 3px solid black;
+        }
+      }
     }
   }
 }

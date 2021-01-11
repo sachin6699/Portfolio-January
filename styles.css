@@ -733,6 +733,11 @@ body main .skills-page .skills-container .right-icons-container .left-icons {
           align-items: center;
   font-size: 2.8rem;
   color: whitesmoke;
+  padding-top: 10px;
+}
+
+body main .skills-page .skills-container .right-icons-container .left-icons p {
+  font-size: 0.9rem;
 }
 
 body main .skills-page .skills-container .right-icons-container .middle-icons {
@@ -752,6 +757,11 @@ body main .skills-page .skills-container .right-icons-container .middle-icons {
           align-items: center;
   font-size: 2.8rem;
   color: whitesmoke;
+  padding-top: 10px;
+}
+
+body main .skills-page .skills-container .right-icons-container .middle-icons p {
+  font-size: 0.9rem;
 }
 
 body main .skills-page .skills-container .right-icons-container .right-icons {
@@ -771,11 +781,35 @@ body main .skills-page .skills-container .right-icons-container .right-icons {
           align-items: center;
   font-size: 2.8rem;
   color: whitesmoke;
+  padding-top: 10px;
+}
+
+body main .skills-page .skills-container .right-icons-container .right-icons p {
+  font-size: 0.9rem;
 }
 
 body main .contact-page {
   width: 100vw;
   height: 100vh;
+  padding-top: 20vh;
+}
+
+body main .contact-page .contact-container {
+  width: 100vw;
+  height: 80vh;
+  border: 5px solid black;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+body main .contact-page .contact-container .circle-container {
+  width: 80%;
+  height: 60%;
+  border: 3px solid black;
 }
 
 @media screen and (min-width: 480px) {
