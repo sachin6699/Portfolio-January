@@ -143,66 +143,42 @@ body main {
 @-webkit-keyframes shadowAnimation {
   0% {
     width: 150px;
-    -webkit-transform: translateX(-25px) translateY(0px) rotate(0deg);
-            transform: translateX(-25px) translateY(0px) rotate(0deg);
   }
   20% {
     width: 75px;
-    -webkit-transform: translateX(37.5px) translateY(0px) rotate(0deg);
-            transform: translateX(37.5px) translateY(0px) rotate(0deg);
   }
   40% {
     width: 200px;
-    -webkit-transform: translateX(-25px) translateY(0px) rotate(0deg);
-            transform: translateX(-25px) translateY(0px) rotate(0deg);
   }
   60% {
     width: 75px;
-    -webkit-transform: translateX(37.5px) translateY(0px) rotate(0deg);
-            transform: translateX(37.5px) translateY(0px) rotate(0deg);
   }
   80% {
     width: 75px;
-    -webkit-transform: translateX(37.5px) translateY(0px) rotate(0deg);
-            transform: translateX(37.5px) translateY(0px) rotate(0deg);
   }
   100% {
     width: 150px;
-    -webkit-transform: translateX(-25px) translateY(0px) rotate(0deg);
-            transform: translateX(-25px) translateY(0px) rotate(0deg);
   }
 }
 
 @keyframes shadowAnimation {
   0% {
     width: 150px;
-    -webkit-transform: translateX(-25px) translateY(0px) rotate(0deg);
-            transform: translateX(-25px) translateY(0px) rotate(0deg);
   }
   20% {
     width: 75px;
-    -webkit-transform: translateX(37.5px) translateY(0px) rotate(0deg);
-            transform: translateX(37.5px) translateY(0px) rotate(0deg);
   }
   40% {
     width: 200px;
-    -webkit-transform: translateX(-25px) translateY(0px) rotate(0deg);
-            transform: translateX(-25px) translateY(0px) rotate(0deg);
   }
   60% {
     width: 75px;
-    -webkit-transform: translateX(37.5px) translateY(0px) rotate(0deg);
-            transform: translateX(37.5px) translateY(0px) rotate(0deg);
   }
   80% {
     width: 75px;
-    -webkit-transform: translateX(37.5px) translateY(0px) rotate(0deg);
-            transform: translateX(37.5px) translateY(0px) rotate(0deg);
   }
   100% {
     width: 150px;
-    -webkit-transform: translateX(-25px) translateY(0px) rotate(0deg);
-            transform: translateX(-25px) translateY(0px) rotate(0deg);
   }
 }
 
@@ -230,58 +206,6 @@ body main {
   }
 }
 
-body main .loader {
-  position: absolute;
-  width: 50px;
-  height: 50px;
-  top: 35%;
-  left: 50%;
-  margin-top: -25px;
-  margin-left: -25px;
-  background-color: #ff2e13;
-  -webkit-transform: translateX(0px) translateY(0px) rotate(0deg);
-          transform: translateX(0px) translateY(0px) rotate(0deg);
-  -webkit-animation: mainAnimation 4s ease 0s infinite forwards;
-          animation: mainAnimation 4s ease 0s infinite forwards;
-  z-index: 20;
-}
-
-body main .loader:after {
-  content: "";
-  display: inline-block;
-  position: absolute;
-  width: 50px;
-  height: 50px;
-  top: 0;
-  left: -50px;
-  background-color: #ff2e13;
-  -webkit-transform-origin: top right;
-          transform-origin: top right;
-  -webkit-transform: translateX(0px) translateY(0px) rotate(0deg);
-          transform: translateX(0px) translateY(0px) rotate(0deg);
-  -webkit-animation: secundaryAnimation 4s ease 0s infinite forwards;
-          animation: secundaryAnimation 4s ease 0s infinite forwards;
-}
-
-body main .shadow {
-  position: absolute;
-  width: 100px;
-  height: 10px;
-  top: 50%;
-  left: 50%;
-  margin-top: 30px;
-  margin-left: -75px;
-  border-radius: 50%;
-  background-color: #95a5a6;
-  -webkit-transform: translateX(0px) translateY(0px) rotate(0deg);
-          transform: translateX(0px) translateY(0px) rotate(0deg);
-  -webkit-animation: shadowAnimation 4s ease 0s infinite forwards, float 5s ease-in-out 0s infinite forwards;
-          animation: shadowAnimation 4s ease 0s infinite forwards, float 5s ease-in-out 0s infinite forwards;
-  -webkit-filter: blur(5px);
-          filter: blur(5px);
-  z-index: 1;
-}
-
 body main .top {
   width: 90%;
   height: 13vh;
@@ -301,7 +225,7 @@ body main .top {
   margin-left: 4.5%;
   margin-top: 2%;
   top: 0;
-  background-color: blue;
+  background-color: rgba(0, 0, 0, 0.794);
   -webkit-box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
           box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
 }
@@ -359,6 +283,7 @@ body main .top .navbox a {
 body main .front-page {
   width: 85%;
   height: 70vh;
+  position: relative;
   background-color: rgba(0, 0, 0, 0.794);
   margin: auto;
   margin-top: 20vh;
@@ -383,6 +308,57 @@ body main .front-page {
   color: white;
   -webkit-box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
           box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+}
+
+body main .front-page .loader {
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  top: 30%;
+  left: 50%;
+  margin-top: -25px;
+  margin-left: -25px;
+  background-color: #ff2e13;
+  -webkit-transform: translateX(0px) translateY(0px) rotate(0deg);
+          transform: translateX(0px) translateY(0px) rotate(0deg);
+  -webkit-animation: mainAnimation 4s ease 0s infinite forwards;
+          animation: mainAnimation 4s ease 0s infinite forwards;
+  z-index: 20;
+}
+
+body main .front-page .loader:after {
+  content: "";
+  display: inline-block;
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  top: 0;
+  left: -50px;
+  background-color: #ff2e13;
+  -webkit-transform-origin: top right;
+          transform-origin: top right;
+  -webkit-transform: translateX(0px) translateY(0px) rotate(0deg);
+          transform: translateX(0px) translateY(0px) rotate(0deg);
+  -webkit-animation: secundaryAnimation 4s ease 0s infinite forwards;
+          animation: secundaryAnimation 4s ease 0s infinite forwards;
+}
+
+body main .front-page .shadow {
+  position: absolute;
+  width: 100px;
+  height: 10px;
+  top: 20%;
+  left: 50%;
+  margin-top: -3%;
+  border-radius: 50%;
+  background-color: #95a5a6;
+  -webkit-transform: translateX(-50%) rotate(0deg);
+          transform: translateX(-50%) rotate(0deg);
+  -webkit-animation: shadowAnimation 4s ease 0s infinite forwards, float 5s ease-in-out 0s infinite forwards;
+          animation: shadowAnimation 4s ease 0s infinite forwards, float 5s ease-in-out 0s infinite forwards;
+  -webkit-filter: blur(6px);
+          filter: blur(6px);
+  z-index: 1;
 }
 
 body main .front-page .title {
@@ -542,7 +518,7 @@ body main .projects-page .project-container {
   height: 60vh;
   -webkit-box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
           box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
-  background-color: rgba(185, 42, 42, 0.123);
+  background-color: rgba(0, 0, 0, 0.794);
   border-radius: 25px;
 }
 
@@ -590,6 +566,7 @@ body main .projects-page .project-container .bottom-half .description {
   width: 70%;
   height: 70%;
   text-align: center;
+  color: whitesmoke;
   border-top: 1px solid black;
   font-family: "Nixie One", cursive;
   display: -webkit-box;
@@ -632,7 +609,7 @@ body main .projects-page .project-container .bottom-half .icon-half {
 }
 
 body main .projects-page .project-container .bottom-half .icon-half #link {
-  color: black;
+  color: whitesmoke;
 }
 
 body main .projects-page .project-container .bottom-half .icon-half #link:hover {
@@ -640,7 +617,7 @@ body main .projects-page .project-container .bottom-half .icon-half #link:hover 
 }
 
 body main .projects-page .project-container .bottom-half .icon-half #github {
-  color: black;
+  color: whitesmoke;
 }
 
 body main .projects-page .project-container .bottom-half .icon-half #github:hover {
@@ -705,7 +682,7 @@ body main .skills-page .skills-container .right-icons-container {
   width: 90%;
   height: 30vh;
   border-radius: 25px;
-  background-color: blue;
+  background-color: rgba(0, 0, 0, 0.794);
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -791,25 +768,119 @@ body main .skills-page .skills-container .right-icons-container .right-icons p {
 body main .contact-page {
   width: 100vw;
   height: 100vh;
-  padding-top: 20vh;
+  padding-top: 15vh;
+}
+
+body main .contact-page h2 {
+  padding-top: 20px;
 }
 
 body main .contact-page .contact-container {
   width: 100vw;
-  height: 80vh;
-  border: 5px solid black;
+  height: 70vh;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 30px;
 }
 
-body main .contact-page .contact-container .circle-container {
-  width: 80%;
-  height: 60%;
-  border: 3px solid black;
+body main .contact-page .contact-container .contact-icons-container {
+  width: 30%;
+  height: 75%;
+  background-color: rgba(0, 0, 0, 0.794);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 30px;
+  border-radius: 25px;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  font-size: 4rem;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+          box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+}
+
+body main .contact-page .contact-container .contact-icons-container #github {
+  color: whitesmoke;
+}
+
+body main .contact-page .contact-container .contact-icons-container #github:hover {
+  cursor: pointer;
+}
+
+body main .contact-page .contact-container .contact-icons-container #linkedin {
+  color: whitesmoke;
+}
+
+body main .contact-page .contact-container .contact-icons-container #linkedin:hover {
+  cursor: pointer;
+}
+
+body main .contact-page .contact-container .contact-icons-container #mail {
+  color: whitesmoke;
+}
+
+body main .contact-page .contact-container .contact-icons-container #mail:hover {
+  cursor: pointer;
+}
+
+body main .contact-page .contact-container .contact-info-container {
+  width: 60%;
+  height: 75%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  background-color: rgba(185, 42, 42, 0.123);
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+          box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+  border-radius: 25px;
+}
+
+body main .contact-page .contact-container .contact-info-container p {
+  font-family: "Nixie One", cursive;
+  font-size: 2.5rem;
+  text-align: center;
+  color: black;
+}
+
+body main .contact-page footer {
+  width: 90%;
+  height: 5%;
+  background-color: rgba(0, 0, 0, 0.794);
+  border-radius: 25px;
+  margin-left: 4.5%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-family: "Nixie One", cursive;
+  font-size: 1.5rem;
+  color: whitesmoke;
 }
 
 @media screen and (min-width: 480px) {
